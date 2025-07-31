@@ -8,7 +8,7 @@
     }
 
     InvokeBuild                = 'latest'
-    PSScriptAnalyzer           = 'latest'
+    PSScriptAnalyzer           = '1.23.0'
     Pester                     = 'latest'
     Plaster                    = 'latest'
     ModuleBuilder              = 'latest'
