@@ -38,9 +38,9 @@ function Measure-Keyword
         $keywordFlag = [System.Management.Automation.Language.TokenFlags]::Keyword
         $keywords = $Token.Where{ $_.TokenFlags.HasFlag($keywordFlag) -and
             $_.Kind -ne 'DynamicKeyword' -and
-            $keywordsToIgnore -notContains $_.Text
+            $keywordsToIgnore -notcontains $_.Text
         }
-        $upperCaseTokens = $keywords.Where{ $_.Text -cMatch '[A-Z]+' }
+        $upperCaseTokens = $keywords.Where{ $_.Text -cmatch '[A-Z]+' }
 
         $tokenWithNoSpace = $keywords.Where{ $_.Extent.StartScriptPosition.Line -match "\b$($_.Extent.Text)\(.*" }
 
